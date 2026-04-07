@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+<html lang="en">
+{% block title %} Mongoose - Automation Test {% endblock %}
+{% block content %}
+<div class="mt-5 border p-3 rounded">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Automation Test</h1>
+        <a href="/" class="btn btn-primary">Test History</a>
+    </div>
+    <form action="/run-test" method="post">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="d-flex flex-column gap-1">
+                    <label for="stage_url-id">Stage*: </label>
+                    <select required name="stage_url" id="stage_url-id" class="form-select" aria-label="select stage">
+                        <option value="https://api.wallex.ir">https://api.wallex.ir</option>
+                        <option value="https://api-1.staging.k8s.wallex.dev">
+                            https://api-1.staging.k8s.wallex.dev</option>
+                        <option value="https://api-2.staging.k8s.wallex.dev">
+                            https://api-2.staging.k8s.wallex.dev</option>
+                        <option value="https://api-3.staging.k8s.wallex.dev">
+                            https://api-3.staging.k8s.wallex.dev</option>
+                        <option value="https://api-4.staging.k8s.wallex.dev">
+                            https://api-4.staging.k8s.wallex.dev</option>
+                        <option value="https://api-5.staging.k8s.wallex.dev">
+                            https://api-5.staging.k8s.wallex.dev</option>
+                        <option selected value="https://api-6.staging.k8s.wallex.dev">
+                            https://api-6.staging.k8s.wallex.dev</option>
+                        <option value="http://127.0.0.1:3000">
+                            http://127.0.0.1:3000</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-column gap-1 mt-2">
+                    <label for="project_name-id">Project*: </label>
+                    <select name="project_name" id="project_name-id" class="form-select" required
+                        aria-label="select project">
+                        <option selected>select one project</option>
+                        {% for project in project_list %}
+                        <option value="{{project['name']}}">{{project['name']}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="d-flex flex-column gap-1 mt-2">
+                    <label for="scope_name-id">Scope *: </label>
+                    <select required name="scope_name" id="scope_name-id" class="form-select" required
+                        aria-label="select scop">
+                    </select>
+                </div>
+                <div class="d-flex flex-column gap-1 mt-2">
+                    <label for="tag-list-id">Tag List: </label>
+                    <select name="tag_list" id="tag-list-id" class="form-select" aria-label="select tag">
+                    </select>
+                </div>
+                <button class="btn btn-primary mt-3" type="submit">Run Test</button>
+
+            </div>
+            <div class="col-12 col-md-6 ">
+                <div class="d-flex flex-column gap-1 mt-2">
+                    <label for="test-list-id">Test List: </label>
+                    <select disabled name="test-list" id="test-list-id" class="form-select" style="height: 200px;"
+                        aria-label="select test items" multiple>
+                    </select>
+                </div>
+                <div class="d-flex flex-column gap-1 mt-2">
+                    <div>test scenario: </div>
+                    <dl id="test_scenario">
+                    </dl>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    let test_list = []
+    async function getTestList() {
+        const res = await fetch('/api/project-list')
+        const data = await res.json()
+        test_list = data.results
+        return data.results
+    }
+    getTestList()
+    const scopSelectElement = document.getElementById('scope_name-id')
+    const projectSelectElement = document.getElementById('project_name-id')
+    const testListSelectElement = document.getElementById('test-list-id')
+    const testScenarioElement = document.getElementById('test_scenario')
+    let selectedProject = null
+    projectSelectElement.addEventListener('change', (e) => {
+        selectedProject = test_list.find(item => item.name === e.target.value)
+        scopSelectElement.childNodes.forEach(item => item.remove())
+        selectedProject.scop_list.forEach(scop => {
+            const option = document.createElement('option')
+            option.value = scop.name
+            option.innerText = scop.name
+            scopSelectElement.appendChild(option)
+        })
+        scopSelectElement.dispatchEvent(new Event('change', { target: scopSelectElement }))
+    })
+    scopSelectElement.addEventListener('change', e => {
+        const selectedScop = selectedProject.scop_list.find(test => test.name === e.target.value)
+        testListSelectElement.childNodes.forEach(item => item.remove())
+        selectedScop.test_list.forEach(test => {
+            const option = document.createElement('option')
+            option.value = test.name
+            option.innerText = test.name
+            testListSelectElement.appendChild(option)
+            const dt = document.createElement('dt')
+            dt.innerText = test.name + ":"
+            const details = test.description.split('\n')
+            const detail_1 = document.createElement('dd')
+            const detail_2 = document.createElement('dd')
+            detail_1.innerText = details[0]
+            detail_2.innerText = details[1]
+            testScenarioElement.append(dt, detail_1, detail_2)
+        })
+
+
+    })
+</script>
+{% endblock %}

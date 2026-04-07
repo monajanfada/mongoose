@@ -1,0 +1,2 @@
+*** Test Cases ***;${market};${side};${collateral};${risk_coef};${open_price};${stop_loss};${take_profit};
+1 - pre create with correct parameters;USDTTMN;long;2000000;2;50000;45000;55000;

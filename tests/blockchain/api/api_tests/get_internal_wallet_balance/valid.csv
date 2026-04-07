@@ -1,0 +1,2 @@
+*** Test Cases ***;${coin_address};${token_param};${token_coin};
+1 - address validation with correct parameters;0xf3d883573839070e9b43d1ee58242e86d063e745;ERC20;coin=USDT;

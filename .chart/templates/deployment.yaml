@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongoose
+  labels:
+    app: mongoose
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: mongoose
+  template:
+    metadata:
+      labels:
+        app: mongoose
+    spec:
+      containers:
+        - name: server
+          image: "{{- .Values.image.repository -}}:{{- .Values.image.tag -}}"
+          imagePullPolicy: IfNotPresent
+          env:
+            {{- range $key, $value := .Values.environments }}
+            - name: {{ $key }}
+              valueFrom:
+                configMapKeyRef:
+                  name: mongoose
+                  key: {{ $key }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.containerPort }}
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /app/server/logs
+              name: logs-dir
+      volumes:
+        - name: logs-dir
+          emptyDir: {}

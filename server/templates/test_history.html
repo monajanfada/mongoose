@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %} Mongoose - Test History {% endblock %}
+
+{% block content %}
+<div class="mt-2">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Test History</h1>
+        <a href="/run-test" class="btn btn-primary">Run new Test</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">project</th>
+                <th scope="col">scope</th>
+                <th scope="col">start</th>
+                <th scope="col">end</th>
+                <th scope="col">logs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test_history in test_history_list %}
+            <tr>
+                <td scope="row">{{ test_history.id }}</td>
+                <td>{{ test_history.project }}</td>
+                <td>{{ test_history.scope }}</td>
+                <td>{{ test_history.start_at.strftime('%Y-%m-%d:%H-%M-%S') }}</td>
+                <td>{{ test_history.end_at.strftime('%Y-%m-%d:%H-%M-%S') }}</td>
+                <td>{% for log in test_history.log_files %}
+                    <a href="{{ log.name }}">{{ log.name }}</a>
+                    <br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if pagination['total_pages'] > 1 %}
+    <div>
+        <nav aria-label="table navigation ">
+            <ul class="pagination">
+                {% if pagination['page']>1 %}
+                <li class="page-item"><a class="page-link" href="/?page={{pagination['page']-1}}">Previous</a></li>
+                {% else %}
+                <li class="page-item disabled"><a class="page-link" href="/?page={{pagination['page']-1}}">Previous</a>
+                </li>
+                {% endif %}
+                {% if pagination['page']>1 %}
+                <li class="page-item">
+                    <a class="page-link" href="/?page={{ pagination['page']-1 }}">
+                        {{pagination['page']-1}}
+                    </a>
+                </li>
+                {% endif %}
+                <li class="page-item"><a class="page-link"
+                        href="/?page={{pagination['page']}}">{{pagination['page']}}</a>
+                </li>
+                {% if pagination['page']<pagination['total_pages'] %} <li class="page-item">
+                    <a class="page-link" href="/?page={{ pagination['page']+1 }}">{{pagination['page']+1}}</a>
+                    </li>
+                    {% endif %}
+                    {% if pagination['page']<pagination['total_pages'] %} <li class="page-item"><a class="page-link"
+                            href="/?page={{ pagination['page']+1 }}">Next</a></li>
+                        {% else %}
+                        <li class="page-item disabled"><a class="page-link"
+                                href="/?page={{ pagination['page']+1 }}">Next</a>
+                        </li>
+                        {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

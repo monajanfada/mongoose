@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "body": {
+            "type": "object",
+            "properties": {
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "symbol": {
+                                "type": "string"
+                            },
+                            "base": {
+                                "type": "string"
+                            },
+                            "quote": {
+                                "type": "string"
+                            },
+                            "min_risk_coef": {
+                                "type": "string"
+                            },
+                            "max_risk_coef": {
+                                "type": "string"
+                            },
+                            "risk_coef_step": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "base",
+                            "max_risk_coef",
+                            "min_risk_coef",
+                            "quote",
+                            "risk_coef_step",
+                            "symbol"
+                        ]
+                    },
+                    "default": [
+                        {
+                            "symbol": "USDTTMN",
+                            "base": "USDT",
+                            "quote": "TMN",
+                            "min_risk_coef": "1",
+                            "max_risk_coef": "5",
+                            "risk_coef_step": "0.5"
+                        }
+                    ]
+                },
+                "success": {
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "required": [
+                "result",
+                "success"
+            ]
+        }
+    }
+}

@@ -1,0 +1,12 @@
+services:
+  mongoose:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./logs:/app/server/logs
+    ports:
+      - "8000:8000"
+
+volumes:
+  logs: {}

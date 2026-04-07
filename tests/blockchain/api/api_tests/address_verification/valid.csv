@@ -1,0 +1,2 @@
+*** Test Cases ***;${network};${address};
+1 - address validation with correct parameters;TRC20;TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW;

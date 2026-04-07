@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: gitlab.ecoex.ir/phinix/exchange/server/mongoose
+  tag: "latest"
+
+containerPort: 8000
+
+environments:
+  DEBUG: false
+
+service:
+  host: mongoose.staging.k8s.wallex.dev
+  port: 80

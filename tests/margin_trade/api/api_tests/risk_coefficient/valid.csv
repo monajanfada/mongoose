@@ -1,0 +1,2 @@
+*** Test Cases ***;${side};${market};${risk_coef};
+1 - collateral amount for risk of coefficient;short;USDTTMN;1;

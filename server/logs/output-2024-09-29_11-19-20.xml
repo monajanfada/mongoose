@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.6 on darwin)" generated="2024-09-29T11:19:20.231619" rpa="false" schemaversion="5">
+<suite id="s1" name="Api" source="/Users/wallex/Documents/Projects/mongoose/tests/blockchain/api">
+<suite id="s1-s1" name="Api Tests" source="/Users/wallex/Documents/Projects/mongoose/tests/blockchain/api/api_tests">
+<suite id="s1-s1-s1" name="Address Verification" source="/Users/wallex/Documents/Projects/mongoose/tests/blockchain/api/api_tests/address_verification">
+<suite id="s1-s1-s1-s1" name="Address Verification" source="/Users/wallex/Documents/Projects/mongoose/tests/blockchain/api/api_tests/address_verification/address_verification.robot">
+<kw name="Set Suite Environment" owner="keywords" type="SETUP">
+<kw name="Set Library Search Order" owner="BuiltIn">
+<arg>keywords</arg>
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.310358" elapsed="0.000070"/>
+</kw>
+<kw name="Set Log Level" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.310618" level="DEBUG">Log level changed from INFO to TRACE.</msg>
+<msg time="2024-09-29T11:19:20.310638" level="TRACE">Return: 'INFO'</msg>
+<arg>Trace</arg>
+<doc>Sets the log threshold to the specified level.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.310498" elapsed="0.000163"/>
+</kw>
+<msg time="2024-09-29T11:19:20.310691" level="TRACE">Return: None</msg>
+<status status="PASS" start="2024-09-29T11:19:20.309955" elapsed="0.000753"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="1 - address validation with correct parameters" line="12">
+<kw name="Set Test Environment" owner="keywords" type="SETUP">
+<msg time="2024-09-29T11:19:20.311404" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log Variables" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.311511" level="TRACE">Arguments: [ level='Trace' ]</msg>
+<msg time="2024-09-29T11:19:20.311767" level="TRACE">${/} = /</msg>
+<msg time="2024-09-29T11:19:20.311783" level="TRACE">${:} = :</msg>
+<msg time="2024-09-29T11:19:20.311796" level="TRACE">${\n} = 
+</msg>
+<msg time="2024-09-29T11:19:20.311815" level="TRACE">&amp;{DataDriver_DATA_DICT} = { 1 - address validation with correct parameters={'test_case_name': '1 - address validation with correct parameters', 'arguments': {'${network}': 'TRC20', '${address}': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'}, 'tags': None, 'documentation': None} }</msg>
+<msg time="2024-09-29T11:19:20.311837" level="TRACE">@{DataDriver_DATA_LIST} = [ {'test_case_name': '1 - address validation with correct parameters', 'arguments': {'${network}': 'TRC20', '${address}': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'}, 'tags': None, 'documentation': None} ]</msg>
+<msg time="2024-09-29T11:19:20.311856" level="TRACE">&amp;{DataDriver_TEST_DATA} = { test_case_name=1 - address validation with correct parameters | arguments={'${network}': 'TRC20', '${address}': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'} | tags=None | documentation=None }</msg>
+<msg time="2024-09-29T11:19:20.311870" level="TRACE">${DEBUG_FILE} = NONE</msg>
+<msg time="2024-09-29T11:19:20.311882" level="TRACE">@{Empty_List} = [ ]</msg>
+<msg time="2024-09-29T11:19:20.311893" level="TRACE">${EXECDIR} = /Users/wallex/Documents/Projects/mongoose/server</msg>
+<msg time="2024-09-29T11:19:20.311905" level="TRACE">${False} = False</msg>
+<msg time="2024-09-29T11:19:20.311917" level="TRACE">${HOST_STAGE} = http://127.0.0.1:3000</msg>
+<msg time="2024-09-29T11:19:20.311928" level="TRACE">${LOG_FILE} = /Users/wallex/Documents/Projects/mongoose/server/logs/log-2024-09-29_11-19-20.html</msg>
+<msg time="2024-09-29T11:19:20.311940" level="TRACE">${LOG_LEVEL} = TRACE</msg>
+<msg time="2024-09-29T11:19:20.311951" level="TRACE">${message} = address verified</msg>
+<msg time="2024-09-29T11:19:20.311963" level="TRACE">${None} = None</msg>
+<msg time="2024-09-29T11:19:20.311975" level="TRACE">${null} = None</msg>
+<msg time="2024-09-29T11:19:20.311993" level="TRACE">&amp;{OPTIONS} = { include=[] | exclude=[] | skip=[] | skip_on_failure=[] }</msg>
+<msg time="2024-09-29T11:19:20.312005" level="TRACE">${OUTPUT_DIR} = /Users/wallex/Documents/Projects/mongoose/server/logs</msg>
+<msg time="2024-09-29T11:19:20.312017" level="TRACE">${OUTPUT_FILE} = /Users/wallex/Documents/Projects/mongoose/server/logs/output-2024-09-29_11-19-20.xml</msg>
+<msg time="2024-09-29T11:19:20.312029" level="TRACE">${PREV_TEST_MESSAGE} = </msg>
+<msg time="2024-09-29T11:19:20.312041" level="TRACE">${PREV_TEST_NAME} = </msg>
+<msg time="2024-09-29T11:19:20.312052" level="TRACE">${PREV_TEST_STATUS} = </msg>
+<msg time="2024-09-29T11:19:20.312063" level="TRACE">${REPORT_FILE} = /Users/wallex/Documents/Projects/mongoose/server/logs/report-2024-09-29_11-19-20.html</msg>
+<msg time="2024-09-29T11:19:20.312075" level="TRACE">${result} = True</msg>
+<msg time="2024-09-29T11:19:20.312087" level="TRACE">${ROOT_PATH} = /Users/wallex/Documents/Projects/mongoose/tests/blockchain/api/resources/..</msg>
+<msg time="2024-09-29T11:19:20.312098" level="TRACE">${SPACE} =  </msg>
+<msg time="2024-09-29T11:19:20.312110" level="TRACE">${status} = True</msg>
+<msg time="2024-09-29T11:19:20.312121" level="TRACE">${SUITE_DOCUMENTATION} = A user checks addfress verification</msg>
+<msg time="2024-09-29T11:19:20.312136" level="TRACE">&amp;{SUITE_METADATA} = { }</msg>
+<msg time="2024-09-29T11:19:20.312148" level="TRACE">${SUITE_NAME} = Api.Api Tests.Address Verification.Address Verification</msg>
+<msg time="2024-09-29T11:19:20.312160" level="TRACE">${SUITE_SOURCE} = /Users/wallex/Documents/Projects/mongoose/tests/blockchain/api/api_tests/address_verification/address_verification.robot</msg>
+<msg time="2024-09-29T11:19:20.312172" level="TRACE">${TEMPDIR} = /var/folders/j3/8ddznjz12fg0d7pzk14s4qnr0000gn/T</msg>
+<msg time="2024-09-29T11:19:20.312184" level="TRACE">${TEST_DOCUMENTATION} = </msg>
+<msg time="2024-09-29T11:19:20.312195" level="TRACE">${TEST_NAME} = 1 - address validation with correct parameters</msg>
+<msg time="2024-09-29T11:19:20.312207" level="TRACE">@{TEST_TAGS} = [ ]</msg>
+<msg time="2024-09-29T11:19:20.312218" level="TRACE">${True} = True</msg>
+<msg time="2024-09-29T11:19:20.312234" level="TRACE">Return: None</msg>
+<arg>level=Trace</arg>
+<doc>Logs all variables in the current scope with given log level.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.311463" elapsed="0.000787"/>
+</kw>
+<msg time="2024-09-29T11:19:20.312276" level="TRACE">Return: None</msg>
+<status status="PASS" start="2024-09-29T11:19:20.311328" elapsed="0.000962"/>
+</kw>
+<kw name="Address Validation">
+<msg time="2024-09-29T11:19:20.312463" level="TRACE">Arguments: [ ${network}='TRC20' | ${address}='TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW' ]</msg>
+<kw name="When a user sends an address in an specific network" owner="address_verification">
+<msg time="2024-09-29T11:19:20.312700" level="TRACE">Arguments: [ ${network}='TRC20' | ${address}='TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW' ]</msg>
+<kw name="Set Json Body" owner="address_verification">
+<msg time="2024-09-29T11:19:20.312908" level="TRACE">Arguments: [ ${network}='TRC20' | ${address}='TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW' ]</msg>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.313026" level="TRACE">Arguments: [ 'network=${network}' | 'address=${address}' ]</msg>
+<msg time="2024-09-29T11:19:20.313134" level="TRACE">Return: {'network': 'TRC20', 'address': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'}</msg>
+<msg time="2024-09-29T11:19:20.313171" level="INFO">${data} = {'network': 'TRC20', 'address': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'}</msg>
+<var>${data}</var>
+<arg>network=${network}</arg>
+<arg>address=${address}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.313000" elapsed="0.000182"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.313270" level="TRACE">Arguments: [ '${data}' ]</msg>
+<msg time="2024-09-29T11:19:20.313357" level="INFO">${data} = {'network': 'TRC20', 'address': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'}</msg>
+<msg time="2024-09-29T11:19:20.313371" level="TRACE">Return: None</msg>
+<arg>${data}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.313247" elapsed="0.000138"/>
+</kw>
+<msg time="2024-09-29T11:19:20.313490" level="TRACE">Return: None</msg>
+<arg>${network}</arg>
+<arg>${address}</arg>
+<status status="PASS" start="2024-09-29T11:19:20.312791" elapsed="0.000714"/>
+</kw>
+<kw name="Post User parameters by API For Valid Response" owner="address_verification">
+<msg time="2024-09-29T11:19:20.313650" level="TRACE">Arguments: [  ]</msg>
+<kw name="Check Address Validation" owner="address_verification">
+<msg time="2024-09-29T11:19:20.313847" level="TRACE">Arguments: [ ${data}={'network': 'TRC20', 'address': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'} | ${HOST_STAGE}='http://127.0.0.1:3000' ]</msg>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-09-29T11:19:20.314016" level="TRACE">Arguments: [ 'http://127.0.0.1:3000/api/v2/address/validate' | json={'network': 'TRC20', 'address': 'TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW'} ]</msg>
+<msg time="2024-09-29T11:19:20.323798" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:3000</msg>
+<msg time="2024-09-29T11:19:20.324190" level="FAIL">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<msg time="2024-09-29T11:19:20.333380" level="DEBUG">Traceback (most recent call last):
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/RequestsLibrary/utils.py", line 141, in decorator
+    return func(*args, **kwargs)
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/RequestsLibrary/RequestsKeywords.py", line 218, in session_less_post
+    response = self._common_request('post', None, url,
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/RequestsLibrary/RequestsKeywords.py", line 37, in _common_request
+    resp = method_function(
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/wallex/Documents/Projects/mongoose/venv/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<var>${response}</var>
+<arg>${HOST_STAGE}/api/v2/address/validate</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-09-29T11:19:20.313940" elapsed="0.019506">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" start="2024-09-29T11:19:20.333594" elapsed="0.000019"/>
+</kw>
+<arg>${data}</arg>
+<status status="FAIL" start="2024-09-29T11:19:20.313719" elapsed="0.019969">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</kw>
+<status status="FAIL" start="2024-09-29T11:19:20.313570" elapsed="0.020168">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</kw>
+<arg>${network}</arg>
+<arg>${address}</arg>
+<status status="FAIL" start="2024-09-29T11:19:20.312557" elapsed="0.021221">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</kw>
+<kw name="Then the user can see if address verification response is valid" owner="address_verification">
+<status status="NOT RUN" start="2024-09-29T11:19:20.333936" elapsed="0.000017"/>
+</kw>
+<arg>network=TRC20</arg>
+<arg>address=TLGuoCeM2CHrH61QwJ6AHhW1yjfbgg5QNW</arg>
+<status status="FAIL" start="2024-09-29T11:19:20.312363" elapsed="0.021629">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</kw>
+<kw name="Clean Up Test" owner="keywords" type="TEARDOWN">
+<msg time="2024-09-29T11:19:20.334386" level="TRACE">Arguments: [  ]</msg>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.334512" level="TRACE">Arguments: [ 'Set Tags' | 'failed' ]</msg>
+<kw name="Set Tags" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.334642" level="TRACE">Arguments: [ 'failed' ]</msg>
+<msg time="2024-09-29T11:19:20.334731" level="INFO">Set tag 'failed'.</msg>
+<msg time="2024-09-29T11:19:20.334754" level="TRACE">Return: None</msg>
+<arg>failed</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.334609" elapsed="0.000182"/>
+</kw>
+<msg time="2024-09-29T11:19:20.334841" level="TRACE">Return: None</msg>
+<arg>Set Tags</arg>
+<arg>failed</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.334477" elapsed="0.000388"/>
+</kw>
+<kw name="Run Keyword If Test Passed" owner="BuiltIn">
+<msg time="2024-09-29T11:19:20.334964" level="TRACE">Arguments: [ 'Set Tags' | 'passed' ]</msg>
+<msg time="2024-09-29T11:19:20.334996" level="TRACE">Return: None</msg>
+<arg>Set Tags</arg>
+<arg>passed</arg>
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<status status="PASS" start="2024-09-29T11:19:20.334934" elapsed="0.000078"/>
+</kw>
+<msg time="2024-09-29T11:19:20.335040" level="TRACE">Return: None</msg>
+<status status="PASS" start="2024-09-29T11:19:20.334241" elapsed="0.000918"/>
+</kw>
+<tag>failed</tag>
+<status status="FAIL" start="2024-09-29T11:19:20.310744" elapsed="0.024448">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=3000): Max retries exceeded with url: /api/v2/address/validate (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x101e43c70&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</status>
+</test>
+<doc>A user checks addfress verification</doc>
+<status status="FAIL" start="2024-09-29T11:19:20.244800" elapsed="0.090663"/>
+</suite>
+<status status="FAIL" start="2024-09-29T11:19:20.243657" elapsed="0.092198"/>
+</suite>
+<status status="FAIL" start="2024-09-29T11:19:20.243185" elapsed="0.093222"/>
+</suite>
+<status status="FAIL" start="2024-09-29T11:19:20.232426" elapsed="0.104236"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">failed</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Api">Api</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Api Tests">Api.Api Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Address Verification">Api.Api Tests.Address Verification</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Address Verification">Api.Api Tests.Address Verification.Address Verification</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-29T11:19:20.298209" level="WARN">Imported library '/Users/wallex/Documents/Projects/mongoose/tests/blockchain/libs/blockchain.py' contains no keywords.</msg>
+</errors>
+</robot>

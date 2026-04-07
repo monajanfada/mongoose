@@ -1,0 +1,41 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  IMAGE_ADDRESS: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+build:
+  image: docker
+  stage: build
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "main"'
+  before_script:
+    - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+  script:
+    - docker build -f Dockerfile . -t $IMAGE_ADDRESS
+    - docker push $IMAGE_ADDRESS
+
+deploy:staging:
+  stage: deploy
+  resource_group: staging
+  when: manual
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "main"'
+  needs:
+    - build
+  tags:
+    - kubernetes-cluster-stage
+  environment:
+    name: staging
+    url: https://mongoose.k8s.wallex.ir
+  image: $INFRA_KUBERNETES_DEPLOY_IMAGE
+  script:
+    - >
+      helm upgrade --install mongoose ./.chart
+      --namespace mongoose-staging
+      --wait --atomic --timeout=10m0s
+      --values ./.chart/values.yaml
+      --set image.repository="$CI_REGISTRY_IMAGE"
+      --set image.tag="$CI_COMMIT_SHORT_SHA"
+      --set environments.DEBUG="true"

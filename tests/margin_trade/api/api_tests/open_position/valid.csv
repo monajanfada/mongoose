@@ -1,0 +1,2 @@
+*** Test Cases ***;${market};${side};${collateral};${risk_coef};${open_price};${stop_loss};${take_profit};
+1 - open position with correct parameters;USDTTMN;short;3000000;1;60000;90000;56000;

@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="{{ url_for('static', path='/style/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/style/styles.css') }}" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="host">
+        <template shadowrootmode="open">
+            <div class="container">
+                <h1>Proccess Log</h1>
+                <div style="background-color: #f7f7f9; line-height: 1; padding: 5px;">
+                    <pre><code>{{code_response}}</code></pre>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    {{report_response}}
+    <script src="{{ url_for('static', path='/js/bootstrap.bundle.min.js') }}">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Margin Trade",
+    "root": "/margin_trade",
+    "scop_list": [
+      {
+        "name": "Api",
+        "root": "/margin_trade/api",
+        "test_list": [
+          {
+            "name": "Close Position",
+            "root": "/margin_trade/api/api_tests/close_position",
+            "description": "When the user closes a position\nThen The position is closed"
+          },
+          {
+            "name": "Get Markets",
+            "root": "/margin_trade/api/api_tests/get_markets",
+            "description": "When a random user requests information about markets\nThen the user receives information on the enabled markets"
+          },
+          {
+            "name": "Open Position",
+            "root": "/margin_trade/api/api_tests/open_position",
+            "description": "When the user opens a position\nThen The position is opened"
+          },
+          {
+            "name": "PreCreate",
+            "root": "/margin_trade/api/api_tests/pre_create",
+            "description": "When the user chooses some parameters\nThen the user receives extend fee and liquidation price"
+          },
+          {
+            "name": "Risk Coefficient",
+            "root": "/margin_trade/api/api_tests/risk_coefficient",
+            "description": "When the user sets risk of coefficient\nThen the user can see the appropriate minimum and maximum collateral amounts"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "‌Blockchain",
+    "root": "/blockchain",
+    "scop_list": [
+      {
+        "name": "Api",
+        "root": "/blockchain/api",
+        "test_list": [
+          {
+            "name": "Address Verification",
+            "root": "/blockchain/api/api_tests/address_verification",
+            "description": "When an address is sent on a specific network\nThen validation of address verification response is checked"
+          },
+          {
+            "name": "Assign Address",
+            "root": "/blockchain/api/api_tests/assign_address",
+            "description": "When an address is assigned\nThen the signature verification is successful"
+          }
+        ]
+      }
+    ]
+  }
+]
